@@ -1,0 +1,26 @@
+---
+import {SEO} from 'astro-seo';
+import Menu from './Menu.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    </SEO
+     title="Good title"   
+    >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+</head>
+<body>
+
+    <Menu name="rata" divider="raka"></Menu>    
+    <slot></slot>
+
+    <script type="module" src="/theme.js"></script>
+
+</body>
+</html>
