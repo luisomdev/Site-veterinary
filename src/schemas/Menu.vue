@@ -29,8 +29,8 @@ const changeTheme = ()=>{
     <nav class="w-full h-20 flex justify-between items-center px-6 ">
 
         <div class="flex justify-center items-center">
-            <Icon icon="emojione-v1:cat-face" width="54" height="54" />
-            <span class="text-xl font-bold px-4"> VeterinCap </span>
+            <Icon icon="mdi:bird" width="48" height="48" />
+                        <span class="text-xl font-bold px-4"> VeterinCap </span>
 
         </div>
 
