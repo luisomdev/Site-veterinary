@@ -1,5 +1,7 @@
 # Astro Starter Kit: Basics
 
+# This project use astro v5, astro/tailwind, the reason of the why use this integration is for the library shadcn not this updated to version tailwind 4
+
 ```sh
 npm create astro@latest -- --template basics
 ```
