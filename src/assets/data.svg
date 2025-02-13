@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <rect width="500" height="500" fill="white"/>
+    
+    <!-- Cuerpo del gato -->
+    <ellipse cx="250" cy="350" rx="100" ry="80" fill="orange" stroke="black" stroke-width="5"/>
+    
+    <!-- Cabeza del gato -->
+    <circle cx="250" cy="250" r="60" fill="orange" stroke="black" stroke-width="5"/>
+    
+    <!-- Orejas -->
+    <polygon points="200,200 240,170 250,210" fill="orange" stroke="black" stroke-width="5"/>
+    <polygon points="300,200 260,170 250,210" fill="orange" stroke="black" stroke-width="5"/>
+    
+    <!-- Ojos -->
+    <circle cx="230" cy="240" r="10" fill="black"/>
+    <circle cx="270" cy="240" r="10" fill="black"/>
+    
+    <!-- Nariz -->
+    <polygon points="245,255 255,255 250,265" fill="pink" stroke="black" stroke-width="2"/>
+    
+    <!-- Boca -->
+    <path d="M240,270 Q250,290 260,270" stroke="black" stroke-width="3" fill="none"/>
+    
+    <!-- Bigotes -->
+    <path d="M210,260 L180,250" stroke="black" stroke-width="3"/>
+    <path d="M210,270 L180,270" stroke="black" stroke-width="3"/>
+    <path d="M210,280 L180,290" stroke="black" stroke-width="3"/>
+    <path d="M290,260 L320,250" stroke="black" stroke-width="3"/>
+    <path d="M290,270 L320,270" stroke="black" stroke-width="3"/>
+    <path d="M290,280 L320,290" stroke="black" stroke-width="3"/>
+</svg>
+

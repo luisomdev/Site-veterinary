@@ -1,6 +1,7 @@
 ---
 import { Button } from "@/components/ui/button"
-import '@/styles/globals.css'
+import '@/assets/globals.css'
+import Menu from "@/schemas/Menu.vue"
 ---
 
 <html lang="en">
@@ -8,6 +9,8 @@ import '@/styles/globals.css'
   <title>Astro</title>
  </head>
  <body>
-  <Button>Hello World</Button>
+    <Menu client:only="vue"></Menu>
+    <br>
+    <Button>Hello World</Button>
  </body>
 </html>
