@@ -1,0 +1,30 @@
+---
+import Menu from "./Menu.vue"
+import Footer from "./Footer.vue"
+import '@/assets/globals.css'
+
+export interface Props {
+  title: string;
+  lang: string; // Propiedad opcional
+}
+
+const { title, lang } = Astro.props
+
+---
+
+<!DOCTYPE html>
+<html lang=`${lang}`>
+<head>
+    <slot name="meta-tags"></slot>
+    <title> { title } </title>
+</head>
+<body>
+
+    <Menu client:only="vue"></Menu>
+
+    <slot name="Body"> </slot>
+
+    <Footer client:only="vue"></Footer>
+    
+</body>
+</html>

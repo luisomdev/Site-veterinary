@@ -39,7 +39,7 @@ const changeTheme = () => {
                         <Icon icon="mdi:home-circle-outline" /> Home
                     </a> </Button> </div>
 
-            <div class="px-2"> <Button variant="outline" as-child> <a href="/">
+            <div class="px-2"> <Button variant="outline" as-child> <a href="/services">
                         <Icon icon="mdi:account-service-outline" /> Services
                     </a> </Button> </div>
             <div class="px-2"> <Button variant="outline" as-child> <a href="/">

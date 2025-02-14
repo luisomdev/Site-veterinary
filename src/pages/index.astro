@@ -1,22 +1,27 @@
 ---
-import { Button } from "@/components/ui/button"
 import '@/assets/globals.css'
-import Menu from "@/schemas/Menu.vue"
-
+import Container from '@/schemas/Container.astro'
 //Develop section of : Main (Show some story or something and use animations fed by svg`s, of a human curing a cat),  History (Tell a story of animals cured), Rewiev (Who use the service and gave their opinion), Contact (Forms of contact with the clinic)
 
 ---
 
-<html lang="en">
- <head>
-  <title>Astro</title>
- </head>
- <body>
-    <Menu client:only="vue"></Menu>
-    <br>
-    <div class="p-12">
-      <Button>Hello World</Button>
+<Container lang='es', title='Home page'>
 
-    </div>
- </body>
-</html>
+  <meta slot="meta-tags" charset="UTF-8">
+  <meta slot="meta-tags" name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta slot="meta-tags" name="description" content="soy la web X del X user X">
+
+  <section slot="Body" class="w-full h-screen">
+
+    <h1> Estoy en el body </h1>
+
+  </section>
+
+  <section slot="Body" class="w-full h-screen">
+
+    <h1> Estoy en el pero en otra seccion llamada contact </h1>
+
+  </section>
+
+
+</Container>
