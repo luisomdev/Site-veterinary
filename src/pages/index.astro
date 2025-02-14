@@ -1,27 +1,48 @@
 ---
-import '@/assets/globals.css'
-import Container from '@/schemas/Container.astro'
-//Develop section of : Main (Show some story or something and use animations fed by svg`s, of a human curing a cat),  History (Tell a story of animals cured), Rewiev (Who use the service and gave their opinion), Contact (Forms of contact with the clinic)
+import "@/assets/globals.css";
+import Container from "@/schemas/Container.astro";
+import CardRating from "@/components/CardRating.vue";
+import { Icon } from "@iconify/vue";
 
+//Develop section of : Main (Show some story or something and use animations fed by svg`s, of a human curing a cat),  History (Tell a story of animals cured), Rewiev (Who use the service and gave their opinion), Contact (Forms of contact with the clinic)
 ---
 
-<Container lang='es', title='Home page'>
+<Container lang="es" title="Home page">
+  <meta slot="meta-tags" charset="UTF-8" />
+  <meta
+    slot="meta-tags"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    slot="meta-tags"
+    name="description"
+    content="soy la web X del X user X"
+  />
 
-  <meta slot="meta-tags" charset="UTF-8">
-  <meta slot="meta-tags" name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta slot="meta-tags" name="description" content="soy la web X del X user X">
-
-  <section slot="Body" class="w-full h-screen">
-
-    <h1> Estoy en el body </h1>
-
+  <section
+    slot="Body"
+    class="w-full h-screen flex justify-between items-center px-6 gap-4"
+  >
+    <div class="w-full px-6 flex justify-center items-center">
+      aqui creo que va ser solo como una texto centrado y un contenido, imagen de fondo y un boton para contactar o reservar cita...ya vere.
+    </div>
   </section>
 
-  <section slot="Body" class="w-full h-screen">
+  <section
+    slot="Body"
+    class="w-full h-screen flex justify-between items-center px-6 gap-4"
+  >
+    <div class="w-full px-6 flex justify-center items-start flex-col">
+      <h1 class="text-4xl font-bold px-2 flex justify-center items-center"> <Icon client:load icon="line-md:person-search" width="48" /> Customer feedback</h1>
 
-    <h1> Estoy en el pero en otra seccion llamada contact </h1>
+      <br />
 
+      <CardRating client:only="vue" />
+    </div>
+
+    <div class="flex justify-center items-center p-12">
+      <img src="/public/feedback-2.svg" alt="" />
+    </div>
   </section>
-
-
 </Container>

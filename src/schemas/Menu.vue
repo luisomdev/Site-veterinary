@@ -45,9 +45,6 @@ const changeTheme = () => {
             <div class="px-2"> <Button variant="outline" as-child> <a href="/">
                         <Icon icon="mdi:notebook-edit-outline" width="24" height="24" /> Appointment
                     </a> </Button> </div>
-            <div class="px-2"> <Button variant="outline" as-child> <a href="/">
-                        <Icon icon="mdi:about-circle-outline" /> About us
-                    </a> </Button> </div>
 
             <div class="px-4">
                 <Separator orientation="vertical"></Separator>
