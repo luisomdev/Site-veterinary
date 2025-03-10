@@ -11,13 +11,14 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
-import { h } from 'vue'
+import { h, ref, watch } from 'vue'
 import * as z from 'zod'
 import { Input } from '@/components/ui/input'
 import { toast } from '@/components/ui/toast'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Icon } from '@iconify/vue'
+import SendDataForm from './SendDataForm.vue'
 
 const formSchema = toTypedSchema(z.object({
     email: z.string().min(2).max(50),
@@ -30,12 +31,15 @@ const { handleSubmit } = useForm({
 })
 
 const onSubmit = handleSubmit((values) => {
-    toast({
-        title: 'You submitted the following values:',
-        description: h('pre', { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' }, h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))),
-    })
+    sendform.value = true
+    console.log("nice")
 })
 
+
+const sendform = ref(false)
+watch(sendform, (value) => {
+    sendform ? setTimeout(() => sendform.value = false, 5000) : false
+})
 
 </script>
 
@@ -49,7 +53,7 @@ const onSubmit = handleSubmit((values) => {
                 Appointment
             </TabsTrigger>
         </TabsList>
-        <TabsContent value="SendMail" class="w-full h-full">
+        <TabsContent value="SendMail" class="w-full h-full relative">
 
             <form class="w-full px-3" @submit="onSubmit">
 
@@ -106,6 +110,9 @@ const onSubmit = handleSubmit((values) => {
                 </Button>
             </form>
 
+            <Transition name="fade">
+                <SendDataForm v-show="sendform"></SendDataForm>
+            </Transition>
 
         </TabsContent>
         <TabsContent value="Appointment">
@@ -113,3 +120,18 @@ const onSubmit = handleSubmit((values) => {
         </TabsContent>
     </Tabs>
 </template>
+
+
+<style scoped>
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+</style>
