@@ -11,17 +11,16 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
-import { h, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import * as z from 'zod'
 import { Input } from '@/components/ui/input'
-import { toast } from '@/components/ui/toast'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Icon } from '@iconify/vue'
 import SendDataForm from './SendDataForm.vue'
 
 const formSchema = toTypedSchema(z.object({
-    email: z.string().min(2).max(50),
+    email: z.string().email().min(2).max(50),
     title: z.string().min(3).max(50),
     content: z.string().min(10).max(200)
 }))
@@ -32,20 +31,19 @@ const { handleSubmit } = useForm({
 
 const onSubmit = handleSubmit((values) => {
     sendform.value = true
-    console.log("nice")
 })
 
 
 const sendform = ref(false)
 watch(sendform, (value) => {
-    sendform ? setTimeout(() => sendform.value = false, 5000) : false
+    sendform ? setTimeout(() => sendform.value = false, 1500) : false
 })
 
 </script>
 
 <template>
-    <Tabs default-value="SendMail" class="w-full h-full">
-        <TabsList>
+    <Tabs default-value="SendMail" class="w-full h-full transition-all duration-500">
+        <TabsList class="transition-all duration-500">
             <TabsTrigger value="SendMail">
                 Send mail
             </TabsTrigger>
@@ -111,7 +109,7 @@ watch(sendform, (value) => {
             </form>
 
             <Transition name="fade">
-                <SendDataForm v-show="sendform"></SendDataForm>
+                <SendDataForm :status="sendform" v-show="sendform"></SendDataForm>
             </Transition>
 
         </TabsContent>
